@@ -42,7 +42,7 @@
 
 | 候选 | 安全 | 评价 | 专业 | 可用 | 易用 | 总分 |
 |---|---|---|---|---|---|---|
-| **geekjourneyx/md2wechat-skill** | 8 | 7 | 9 | 9 | 8 | **41** |
+| **geekjourneyx/md2wechat-skill** | 8 | 7 | 9 | 9 | 7 | **40** |
 | caol64/wenyan-mcp（排版+发布 MCP） | 8 | 6 | 8 | 9 | 7 | 38 |
 
 - 形态：面向 AI Agent 的 CLI Skill（Go）：写 Markdown → 生成公众号排版 → AI 制作封面与配图 → 预览校验 → 推送草稿箱，全链路。
@@ -64,10 +64,11 @@
 
 | 候选 | 安全 | 评价 | 专业 | 可用 | 易用 | 总分 |
 |---|---|---|---|---|---|---|
-| **all-in-aigc/aicover** | 7 | 6 | 6 | 8 | 8 | **35** |
+| **all-in-aigc/aicover** | 7 | 6 | 6 | 2 | 6 | **27** |
 
-- 形态：AI 封面生成器（Next.js），有在线版 aicover.design 可直接用，也可自部署；自备生图 API Key。
+- 形态：AI 封面生成器（Next.js），可自部署；自备生图 API Key。
 - 说明：专用封面工具整体 star 不高，这是唯一过门槛且专注封面的；短板是文档较薄（README 约 2 千字）。公众号链路里 md2wechat-skill 自带封面制作，可互补。
+- **实测更正（2026-11-11）**：原记的在线版 aicover.design 已失效——域名内容已被替换成无关产品 WorkAny Bot，README 标注的 Live Demo 不复存在。可用性 8→2、易用性 8→6，总分 35→27；仓库代码仍在，未实测自部署。它仍是本方向唯一过门槛者而保留入选，但状态应视为"待自部署验证"，不是开箱可用。
 
 ### 6. 图片 —— 入选：MiniMax-AI/MiniMax-MCP（1,598★）
 
@@ -132,13 +133,34 @@
 |---|---|---|---|
 | 小红书 | xpzouying/xiaohongshu-mcp | 17,063 | 41 |
 | 推特 X | 6551Team/opentwitter-mcp | 1,439 | 34 |
-| 微信公众号运营 | geekjourneyx/md2wechat-skill | 3,790 | 41 |
+| 微信公众号运营 | geekjourneyx/md2wechat-skill | 3,790 | 40 |
 | 排版撰写 | doocs/md | 13,521 | 45 |
-| 封面 | all-in-aigc/aicover | 1,796 | 35 |
+| 封面 | all-in-aigc/aicover | 1,796 | 27（实测下调） |
 | 图片 | MiniMax-AI/MiniMax-MCP | 1,598 | 40 |
 | 去 AI 味 | op7418/Humanizer-zh | 22,487 | 47 |
 | 视觉设计 | GLips/Figma-Context-MCP | 16,187 | 42 |
 | 前端设计 | google-labs-code/stitch-skills | 8,722 | 42 |
 | 选题创意 | sansan0/TrendRadar | 63,566 | 45 |
 
-注：star 数与仓库状态为 2026-11-11 调研当日数据；评分为本报告基于公开信息的判断（文档、许可证、维护活跃度、凭据模型），非实测跑分；各项目许可证以其仓库 LICENSE 文件为准。
+注：star 数与仓库状态为 2026-11-11 调研当日数据；评分为本报告基于公开信息的判断（文档、许可证、维护活跃度、凭据模型）；各项目许可证以其仓库 LICENSE 文件为准。2026-11-11 已对全部 10 个入选项目做装机实测，结果见下节，两处分数已按实测修正。
+
+## 实测结果（2026-11-11 装机实测）
+
+环境：Linux（node v24 / python 3.12，无 go/docker/uv）；原则：只做安装与启动级验证，不注册、不填凭据、不付费。完整记录见测试日志（TEST-RESULTS，含 Humanizer-zh 改写样例与各项目命令输出）。
+
+| 项目 | 结论 | 实测要点 |
+|---|---|---|
+| xpzouying/xiaohongshu-mcp | 部分通过 | v2.7.3 二进制真实运行：自动下载内置浏览器、HTTP 服务 :18060、MCP 握手成功、18 个工具清单完整。卡点：本机沙箱网络下浏览器直连小红书失败（ERR_TUNNEL_CONNECTION_FAILED，环境问题，正常网络需复测）；实际使用需用户本人扫码登录 |
+| 6551Team/opentwitter-mcp | 部分通过 | pip 安装成功；启动即报 OPENNEWS_TOKEN not configured。卡点：6551 付费 API Token |
+| geekjourneyx/md2wechat-skill | 部分通过 | 官方预编译二进制开箱即用；50+ 主题、59 个排版模块、ai 模式排版提示词生成（4721 字）全部本地可用。卡点：默认 api 模式成稿转换需项目方 MD2WECHAT_API_KEY；推草稿箱需 WECHAT_APPID/SECRET（未测）。易用性据此 8→7，总分 41→40 |
+| doocs/md | 通过 | 在线版 doocs.github.io/md 可达，编辑器完整加载、示例文档与渲染齐全，零安装可用（页面抓取验证，未做交互打字实测） |
+| all-in-aigc/aicover | 未通过 | 在线 Demo 已失效：aicover.design 已变成无关产品 WorkAny Bot；仓库代码仍在，自部署未测。分数已下调（见封面节更正） |
+| MiniMax-AI/MiniMax-MCP | 部分通过 | 官方包 pip 安装成功；启动即报 MINIMAX_API_KEY required（无 key 连工具列表都拿不到）。卡点：MiniMax 付费 API Key |
+| op7418/Humanizer-zh | 通过 | 取 AI 腔样例文本按 SKILL.md 规则实际改写：套话清除，三个功能点、"一些专家"的归因与"可能"的限定全部保留，无虚构信息 |
+| GLips/Figma-Context-MCP | 部分通过 | npx 一键拉起 v0.13.2、--help 完整；无 token 启动即报错。卡点：Figma Personal Access Token |
+| google-labs-code/stitch-skills | 部分通过 | 结构验证：3 个 plugin、16 个 SKILL.md、frontmatter 规范齐全；实际生成需接入 Stitch MCP（Google 服务），本次未接 |
+| sansan0/TrendRadar | 通过 | 全链路跑通：11 个平台 255 条热榜落盘 SQLite、44 条频率词命中、生成 144 KB HTML 报告；AI 分析无 key 时优雅跳过。注意 pip 安装需按 uv.lock 对齐 pydantic==2.12.2（项目主推 uv） |
+
+汇总：通过 3（TrendRadar、doocs/md、Humanizer-zh）、部分通过 6（全部卡在各自的密钥/登录，安装与启动本身无问题）、未通过 1（aicover 在线版失效）。
+
+解锁清单（补上即可从"部分通过"变真可用）：小红书 = 本人扫码登录；opentwitter-mcp = 6551 付费 Token；MiniMax-MCP = MiniMax API Key；Figma-Context-MCP = Figma Token；md2wechat = MD2WECHAT_API_KEY ＋ 公众号 AppID/Secret（推草稿时）；stitch-skills = Stitch MCP 接入。

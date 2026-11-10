@@ -2,7 +2,7 @@
 
 > 10 个内容运营方向，每个方向只收录 **一个** 项目：在 GitHub 上 star > 1000 的 Skill / MCP / 工具中，按五维评分调研后留下的最高分。
 
-调研日期：2026-11-11。完整评分过程、落选候选与取舍理由见 [RESEARCH.md](./RESEARCH.md)。
+调研日期：2026-11-11。完整评分过程、落选候选与取舍理由见 [RESEARCH.md](./RESEARCH.md)。10 个入选项目已于同日全部装机实测（通过 3、部分通过 6、未通过 1），结果与两处分数修正见 RESEARCH.md 的"实测结果"一节。
 
 ## 评分维度（每维 0–10，总分 50）
 
@@ -14,9 +14,9 @@
 |---|---|---|---|---|
 | 小红书 | [xpzouying/xiaohongshu-mcp](https://github.com/xpzouying/xiaohongshu-mcp) | 17,063 | 41 | 本地 MCP 驱动已登录账号：搜索、发布、互动、达人数据 |
 | 推特 X | [6551Team/opentwitter-mcp](https://github.com/6551Team/opentwitter-mcp) | 1,439 | 34 | X 数据侧 MCP：资料、搜索、粉丝事件、KOL 追踪 |
-| 微信公众号运营 | [geekjourneyx/md2wechat-skill](https://github.com/geekjourneyx/md2wechat-skill) | 3,790 | 41 | Agent CLI：Markdown → 排版 → 配图/封面 → 草稿箱全链路 |
+| 微信公众号运营 | [geekjourneyx/md2wechat-skill](https://github.com/geekjourneyx/md2wechat-skill) | 3,790 | 40 | Agent CLI：Markdown → 排版 → 配图/封面 → 草稿箱全链路 |
 | 排版撰写 | [doocs/md](https://github.com/doocs/md) | 13,521 | 45 | 微信 Markdown 编辑器事实标准，主题与图床生态齐全 |
-| 封面 | [all-in-aigc/aicover](https://github.com/all-in-aigc/aicover) | 1,796 | 35 | AI 封面生成器，有在线版也可自部署 |
+| 封面 | [all-in-aigc/aicover](https://github.com/all-in-aigc/aicover) | 1,796 | 27 | AI 封面生成器（在线 Demo 已失效，需自部署） |
 | 图片 | [MiniMax-AI/MiniMax-MCP](https://github.com/MiniMax-AI/MiniMax-MCP) | 1,598 | 40 | MiniMax 官方 MCP：图/视频/音频全模态生成 |
 | 去 AI 味 | [op7418/Humanizer-zh](https://github.com/op7418/Humanizer-zh) | 22,487 | 47 | 中文原生去 AI 味 Skill，保留作者声音，npx 一键装 |
 | 视觉设计 | [GLips/Figma-Context-MCP](https://github.com/GLips/Figma-Context-MCP) | 16,187 | 42 | Figma → Agent 的事实标准 MCP（Framelink） |
@@ -29,6 +29,7 @@
 - **opentwitter-mcp**：依赖 6551 第三方数据 API（付费 Key、请求经第三方），只做数据读取，不做发推；敏感数据慎用。
 - **公众号 / 图片类**：凭据与 API Key 均为本地配置或环境变量，使用前先读各仓库的配置说明。
 - **去 AI 味类**：纯文本规则 Skill，零凭据零网络，两件同分（47），按中文场景贴合度选了 Humanizer-zh；英文内容可用其上游原典 [blader/humanizer](https://github.com/blader/humanizer)（67,453★）。
+- **aicover**：实测发现其在线 Demo 域名已被替换为无关产品，只剩自部署一条路，分数已下调（35→27），入选仅因它是本方向唯一过门槛者。
 
 ## 落选但值得知道
 
