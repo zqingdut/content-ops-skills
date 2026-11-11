@@ -1,0 +1,20 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 189, in _run_module_as_main
+  File "<frozen runpy>", line 148, in _get_module_details
+  File "<frozen runpy>", line 112, in _get_module_details
+  File "/home/hatch/workspace/skill-tests/TrendRadar/trendradar/__init__.py", line 10, in <module>
+    from trendradar.context import AppContext
+  File "/home/hatch/workspace/skill-tests/TrendRadar/trendradar/context.py", line 30, in <module>
+    from trendradar.report import (
+  File "/home/hatch/workspace/skill-tests/TrendRadar/trendradar/report/__init__.py", line 22, in <module>
+    from trendradar.report.html import render_html_content
+  File "/home/hatch/workspace/skill-tests/TrendRadar/trendradar/report/html.py", line 13, in <module>
+    from trendradar.ai.formatter import render_ai_analysis_html_rich
+  File "/home/hatch/workspace/skill-tests/TrendRadar/trendradar/ai/__init__.py", line 8, in <module>
+    from .analyzer import AIAnalyzer, AIAnalysisResult
+  File "/home/hatch/workspace/skill-tests/TrendRadar/trendradar/ai/analyzer.py", line 13, in <module>
+    from trendradar.ai.client import AIClient
+  File "/home/hatch/workspace/skill-tests/TrendRadar/trendradar/ai/client.py", line 12, in <module>
+    from litellm import completion
+ModuleNotFoundError: No module named 'litellm'
+tr run exit: 1

@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/home/hatch/workspace/skill-tests/venv-mm/bin/minimax-mcp", line 5, in <module>
+    from minimax_mcp.server import main
+  File "/home/hatch/workspace/skill-tests/venv-mm/lib/python3.12/site-packages/minimax_mcp/server.py", line 42, in <module>
+    raise ValueError("MINIMAX_API_KEY environment variable is required")
+ValueError: MINIMAX_API_KEY environment variable is required
