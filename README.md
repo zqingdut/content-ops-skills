@@ -39,4 +39,28 @@
 
 ---
 
-star 数为 2026-11-11 当日数据；评分为基于公开信息（文档、许可证、维护活跃度、凭据模型）的调研判断，非实测跑分；各项目许可证以其仓库 LICENSE 为准。本仓库只做索引与评价，不收录任何第三方代码。
+star 数为 2026-11-11 当日数据；评分为基于公开信息（文档、许可证、维护活跃度、凭据模型）的调研判断，非实测跑分；各项目许可证以其仓库 LICENSE 为准。本仓库除索引与评价外，另按方向收录了各冠军的源码快照（见文末「收录说明」），版权与许可证归各原项目所有。
+
+## 收录说明（2026-11-11 追加）
+
+应仓库主的要求，10 个冠军的源码快照已按方向收进 `modules/`，实测材料在 `tests/`：
+
+| 目录 | 内容 |
+| --- | --- |
+| `modules/01-xiaohongshu/` | xpzouying/xiaohongshu-mcp |
+| `modules/02-x-twitter/` | 6551Team/opentwitter-mcp |
+| `modules/03-wechat/` | geekjourneyx/md2wechat-skill |
+| `modules/04-typesetting/` | doocs/md |
+| `modules/05-cover/` | all-in-aigc/aicover |
+| `modules/06-image-gen/` | MiniMax-AI/MiniMax-MCP |
+| `modules/07-deai/` | op7418/Humanizer-zh |
+| `modules/08-visual-design/` | GLips/Figma-Context-MCP |
+| `modules/09-frontend-design/` | google-labs-code/stitch-skills |
+| `modules/10-trending/` | sansan0/TrendRadar |
+| `tests/` | 实测日志：TEST-RESULTS.md、humanizer-test.md、各项目安装/运行日志、TrendRadar 实测报告页 |
+
+收录口径：
+
+- 快照为 2026-11-11 当日的浅克隆，**不含** .git 历史、node_modules / .venv 等依赖目录与构建产物；各项目自带的 LICENSE 原样保留，版权归原作者。
+- 01 模块有 3 个 5MB+ 的演示 GIF（check_login.gif、claude_push.gif、inspect_mcp_publish.gif）因体积未收录，其同内容的 mp4 版本已收录在 `assets/` 里。
+- 上游仓库仍是各项目的最新版本来源；这里只是离线快照，方便集中查阅与二次开发。
