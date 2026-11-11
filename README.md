@@ -63,4 +63,5 @@ star 数为 2026-11-11 当日数据；评分为基于公开信息（文档、许
 
 - 快照为 2026-11-11 当日的浅克隆，**不含** .git 历史、node_modules / .venv 等依赖目录与构建产物；各项目自带的 LICENSE 原样保留，版权归原作者。
 - 01 模块有 3 个 5MB+ 的演示 GIF（check_login.gif、claude_push.gif、inspect_mcp_publish.gif）因体积未收录，其同内容的 mp4 版本已收录在 `assets/` 里。
+- 10 模块的 TrendRadar 有 2 个文件未能收录：其 `README.md` 与 `README-EN.md` 里印有 Slack Webhook 的示例格式串（占位符），被 GitHub 的密钥扫描拦截，无法推送；原文请看上游仓库 https://github.com/sansan0/TrendRadar 。
 - 上游仓库仍是各项目的最新版本来源；这里只是离线快照，方便集中查阅与二次开发。
