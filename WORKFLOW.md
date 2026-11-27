@@ -33,7 +33,7 @@
 
 ## 3. 写稿 / 改稿
 
-对应 Skill：`dbs-content`、`khazix-writer`、`baoyu-article-illustrator`
+对应 Skill：`dbs-content`、`khazix-writer`
 
 - 别人给的成品稿：先全文核查再动（LongCat 17 处、FAA 30 处、GPT-6.2 4 处）。
 - 数字冲突时只用单项数字，不用有争议的总数；满意度类数字必须标明口径（内部用户反馈）。
@@ -51,7 +51,7 @@
 
 ## 5. 配图核查
 
-对应 Skill：`verify_generated_images`
+对应 Skill：`verify_generated_images`、`baoyu-article-illustrator`
 
 - 生图前先写“事实锁”：图上可能出现的每个日期、数字、人名、航班号、时间、引文，全部抄自已核实的正文，写进提示词文件。
 - 每张生图自己打开读一遍：图上所有文字、日期、数字、印章，逐项对事实锁；锁里没有的事实一律算编造。
@@ -92,7 +92,7 @@
 
 - 只存草稿，绝不发布。草稿、已排期、已发布是三种状态，别混着说。
 - 路线：浏览器粘贴优先（Mac 用 ⌘V，Ctrl+V 在 Mac Chrome 里基本无效）；Word 导入失败一次就停，改走富文本粘贴。
-- API 路线：AppSecret 只放本地 .env，绝不进聊天；中继服务器固定 IP（直连会因出口 IP 轮换被白名单拦）；先 `--check` 再正式推；GIF 压到 1MB 以下。
+- API 路线：AppSecret 只放本地 .env，绝不进聊天；中继服务器固定 IP（直连会因出口 IP 轮换被白名单拦）；先 `--check` 再正式推。
 - 第三方绕过工具先验：请求经谁的服务器、运营主体是谁、隐私条款有没有——查不清的不建议授权（例：limyai）。
 - 推完报 media_id，交给用户自己去草稿箱验排版和图。
 
@@ -121,6 +121,7 @@
 | 选题核查 | `verify_topic_list_before_offering` | `10-trending` TrendRadar |
 | 平台推荐核查 | `verify_before_recommending` | ——（通用流程） |
 | 配图核查 | `verify_generated_images` | `06-image-gen` MiniMax-MCP、`05-cover` aicover |
+| 批量下载核查 | `verify_bulk_downloads` | `skills/verify-bulk-downloads` |
 | 排版渲染核查 | `verify_wechat_html_render`、`dbs-wechat-html` | `04-typesetting` doocs/md、`03-wechat` md2wechat-skill |
 | 钩子核查 | `dbs-title-cover-intro`、`baoyu-cover-image` | `05-cover` aicover |
 | 去 AI 味 | `humanizer-zh` | `07-deai` Humanizer-zh |
